@@ -1,14 +1,18 @@
+{{{before}}}
 <main>
 	<h1>Your photos</h1>
 	{{#allPhotosExcerpts}}
 		<section>
 			<h2>{{key}}</h2>
 			<div class="excerpts">
-				{{#files}}
+				<div class="excerpts__body">
+					{{#files}}
 					<img src="{{fullPath}}" alt="{{name}}" />
-				{{/files}}
+					{{/files}}
+				</div>
 			</div>
 		</section>
 
 	{{/allPhotosExcerpts}}
 </main>
+{{{after}}}

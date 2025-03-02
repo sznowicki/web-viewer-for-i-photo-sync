@@ -11,7 +11,10 @@ const main = async () => {
 	console.log('Preparing index...');
 	await initIndex();
 	console.log('Index ready.');
+
+	app.use('/assets', express.static('/app/app/assets'));
 	app.use('/app/photos', express.static('/app/photos'));
+
 	// General error handler
 	app.use((err, req, res, next) => {
 		console.error(err);

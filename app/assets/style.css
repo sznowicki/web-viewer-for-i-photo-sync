@@ -1,0 +1,19 @@
+img {
+	height: auto;
+}
+
+.excerpts {
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.excerpts__body {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.excerpts__body img {
+	height: 5vw;
+	width: auto;
+	object-fit: cover;
+}
