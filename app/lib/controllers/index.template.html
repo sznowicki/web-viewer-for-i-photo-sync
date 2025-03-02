@@ -1,0 +1,14 @@
+<main>
+	<h1>Your photos</h1>
+	{{#allPhotosExcerpts}}
+		<section>
+			<h2>{{key}}</h2>
+			<div class="excerpts">
+				{{#files}}
+					<img src="{{fullPath}}" alt="{{name}}" />
+				{{/files}}
+			</div>
+		</section>
+
+	{{/allPhotosExcerpts}}
+</main>

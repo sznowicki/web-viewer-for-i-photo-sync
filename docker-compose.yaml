@@ -1,0 +1,24 @@
+services:
+  photos-sync:
+    image: steilerdev/icloud-photos-sync
+    container_name: photos-sync
+    user: "1001:1001"
+    environment:
+      APPLE_ID_USER:
+      APPLE_ID_PWD:
+      TZ: "Europe/Berlin"
+      #SCHEDULE: "* 2 * * *"
+      ENABLE_CRASH_REPORTING: true
+    ports:
+      - "222:80"
+    volumes:
+      - ./photos:/opt/icloud-photos-library
+  photos-web-viewer:
+    build:
+      context: .
+    volumes:
+        - ./photos:/app/photos
+        - ./app:/app/app
+    command: "yarn dev"
+    ports:
+      - "1001:80"
